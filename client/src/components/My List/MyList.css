@@ -1,0 +1,39 @@
+.mfavoritos{
+    margin-left: 5%;
+
+}
+
+.opcionesFav {
+
+    display:flow-root;
+    font-size: 300%;
+    color: #e4d9d9;
+
+   } 
+
+.opcionestitulo {
+    display:flow-root;
+    font-size: 300%;
+    color: #e4d9d9;
+
+   }  
+
+   .finish{
+    margin-top: 10%;
+   }
+
+
+
+
+ .texto{
+    color: gold;
+     font-size: 200%;
+     
+ }
+
+
+ .favot{
+    margin-top: 50px;
+    
+     
+ }

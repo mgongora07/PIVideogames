@@ -1,0 +1,89 @@
+.contenedor{
+    margin-top: 10%;
+
+}
+
+.eVolver{
+    color: gold;
+    font-size: 150%;
+}
+
+.contenedor h1{
+    color: white;
+}
+
+
+
+.formulario{
+    color: white;
+}
+
+.form{
+     width: 500px;
+}
+
+
+
+
+.describe{
+    width: 700px; 
+    height: 20px;
+    }
+
+
+.divgenre1{
+    display: inline;
+    width: 60%;   
+}
+
+
+.divgenre{
+    border-color: goldenrod;
+    color: #ffffff;
+    background-color: black;
+    margin-bottom: 20px;
+    font-size:small;
+    border-radius: 20px 20px 20px 20px;
+    width: 100px;
+    height: 40px;
+    
+}
+
+.divgenre:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 40px rgba(232, 11, 15, 1);
+   }
+
+   .divgenre:active{
+    color:black;
+    background-color:white;
+    font-size: 90%;
+    box-shadow: 2px 2px 40px rgba(227, 234, 8, 0.5);
+   }
+
+
+   .crear{
+    border-color: goldenrod;
+    color: #ffffff;
+    background-color: black;
+    margin-bottom: 20px;
+    font-size:small;
+    border-radius: 20px 20px 20px 20px;
+    width: 100px;
+    height: 40px;
+    
+   }
+
+
+   
+.crear:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 40px rgb(55, 232, 11);
+   }
+
+   .crear:active{
+    color:black;
+    background-color:white;
+    font-size: 90%;
+    box-shadow: 2px 2px 40px rgba(227, 234, 8, 0.5);
+   }

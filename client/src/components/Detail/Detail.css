@@ -1,0 +1,118 @@
+.nombre{
+    display: flex;
+    font-size: 250%;
+    color: #ffffff;
+
+}
+
+.tarjeta{
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 2%;
+    padding: 3%;
+    background-color: rgba(42, 42, 38, 0.495);
+    box-shadow: 2px 2px 40px rgba(227, 234, 8, 0.5);
+    width: 80%;
+    margin-left: 7%;
+}
+
+.imagen{
+    
+    margin-top: 2%;
+    box-shadow: 2px 2px 40px rgba(208, 208, 192, 0.9);
+   width: 650px;
+   height: 500px;
+    
+
+
+}
+
+.details {
+    font-size:xx-small;
+    display: flex;
+    gap:50px;
+   
+}
+
+.text{
+   color:gold;
+    font-size: 150%;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.texto{
+    text-align:left;
+    margin-top: 2%;
+}
+ 
+.division{
+    box-shadow: 2px 2px 40px rgba(3, 246, 11);
+}   
+
+
+
+.encabezados{
+    display: flex;
+       font-size: 200%;
+    color: #ffffff;
+}
+
+
+.favoritos{
+    display: flex;
+}
+
+.favoritos button{
+    border-color: goldenrod;
+    color: #ffffff;
+    background-color: black;
+    margin-right: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 100%;
+    margin-bottom: 10px;
+    border-radius: 20px 20px 20px 20px;
+    width: 200px;
+    padding: 1.5%;
+
+}
+
+
+
+.favoritos button:hover{
+    cursor: pointer;
+   }
+
+   .favoritos button:active{
+    color:black;
+    background-color:white;
+    font-size: 105%;
+    box-shadow: 2px 2px 40px rgba(227, 234, 8, 0.5);
+   }
+
+   .texto{
+    color: gold;
+     font-size: 150%;
+     
+ }
+
+
+ .modifica{
+    position: absolute;
+    margin-left: 60%;
+ }
+ 
+ .picachu{
+    margin-top: 15%;
+    margin-left: 5%;
+        width: 90%;
+}
+
+
+.casa{
+    position: absolute;
+    margin-left: 40%;
+    
+ }
+ 

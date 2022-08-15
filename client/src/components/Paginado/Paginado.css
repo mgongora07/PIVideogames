@@ -1,0 +1,40 @@
+.lista{
+    margin-right: 13%;
+    font-size: 100%;
+    color: #ffffff;
+   
+}
+
+.number{
+    display:inline;
+    justify-content: center;
+    align-items: center;    
+    padding: 10px;
+
+}
+
+.paginado button{
+    background-color: rgb(8, 8, 8);
+    border-color: darkgoldenrod;
+    color: white;
+    font-size: 30px;
+    border-radius: 50px ;
+
+}
+
+
+.paginado button:hover{
+    cursor: pointer;
+}
+
+
+
+
+.paginado button:active {
+    cursor: pointer;
+    font-size: 110%;
+    color:rgb(6, 6, 6);
+    text-shadow: 0 0 5px #fff;
+    background-color: rgb(248, 248, 252);
+    box-shadow: 10px 10px 40px rgba(229, 232, 133, .9);
+}

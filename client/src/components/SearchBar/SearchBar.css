@@ -1,0 +1,28 @@
+.busqueda{
+    font-size: 100%;
+}
+
+.busqueda button{
+    border-color: goldenrod;
+    color: #ffffff;
+    background-color: black;
+    margin-right: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-bottom: 10px;
+    border-radius: 20px 20px 20px 20px;
+    align-self: auto;
+    padding: .5%;
+
+}
+
+.busqueda button:hover{
+    cursor: pointer;
+   }
+
+.busqueda button:active{
+    color:black;
+    background-color:white;
+    font-size: 102%;
+    box-shadow: 2px 2px 40px rgba(227, 234, 8, 0.5);
+   }
