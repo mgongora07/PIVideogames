@@ -123,7 +123,7 @@ export function removevideogameFavorite(payload){
 export function getDetail (id){
   return async function(dispatch){
     try{
-      var json= await axios.get('/'+id);
+      var json= await axios.get('/videogame/'+id);
       return dispatch({
         type:'GET_DETAILS',
         payload:json.data
