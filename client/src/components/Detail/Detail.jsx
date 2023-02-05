@@ -4,25 +4,23 @@ import {useDispatch,useSelector} from "react-redux";
 import { getDetail } from "../../actions";
 import { useEffect} from "react";
 import { addvideogameFavorite } from '../../actions'; //modificado
+import { useHistory } from "react-router-dom";
 import './Detail.css';
 
 
 export default function Detail(props){
-    console.log(props)
     const dispatch=useDispatch()
 
     const favoritos=useSelector(state=>state.videogamesFavoritos)
-    console.log(favoritos)
-    
-    
-     //const dispatch= useDispatch();   
+    const dataRecibe=props.match.params.id
+    const usehistory = useHistory();   
 
 
 
 
 useEffect(()=>{
-    dispatch(getDetail(props.match.params.id))
-},[dispatch,props.match.params.id])
+    dispatch(getDetail(dataRecibe))
+},[dispatch,dataRecibe])
 
 const myVideogame=useSelector((state)=>state.detail)
 
@@ -32,7 +30,7 @@ const myVideogame=useSelector((state)=>state.detail)
 
 var busca=favoritos.find(favoritos=>favoritos.id===myVideogame.id)
 var encuentra=busca?true:false
-console.log(encuentra)
+
 
 function handleSubmit(e){
     e.preventDefault();
@@ -40,6 +38,17 @@ function handleSubmit(e){
     alert("Videojuego Agregado a tu Lista de Favoritos")
    
 }
+
+function regresarIni(e){
+    e.preventDefault();
+    dispatch(getDetail())
+    usehistory.push('/home')
+    }
+
+
+let datnumero=myVideogame.id
+
+console.log(datnumero)
 
 var datos=myVideogame.createdInDb?false:true
 var visible=myVideogame.id===0?true:false
@@ -50,7 +59,7 @@ return(
 
     <div>
         {
-        myVideogame.length!==0?(
+        datnumero!==251509?(
         <div className="tarjeta">
         <div className="nombre"> {myVideogame.name}</div>
         
@@ -77,7 +86,8 @@ return(
      
         
         <div className="modifica" hidden={datos}> <Link to={`/myvideogame/${myVideogame.id}`} className="texto" >MODIFICA TU VIDEO JUEGO</Link></div>
-        <div className="casa" > <Link to={'/home'} className="texto" >INICIO</Link></div>
+        <button onClick={(e)=>regresarIni(e)}>INICIO</button>
+        
         
         
         </div>

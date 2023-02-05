@@ -30,7 +30,7 @@ const getApigames=async ()=>{
         platform:jgo.platforms.map(p=>{
             return p.platform.name
         })
-    })
+    }) 
     apiJuego=apiUrl.data.next
 });
 }
@@ -43,6 +43,35 @@ jsonGames.forEach(C => {
     resultados=resultados.concat(jsonGames)
     return resultados
 }
+
+
+const getApigames2=async ()=>{
+  let resultados=[]
+  let apiJuego=`https://api.rawg.io/api/games?key=${API_KEY}`
+  let apiUrl= await axios.get(apiJuego);
+  apiUrl.data?.results.forEach((jgo)=>{
+  resultados.push({
+      name:jgo.name,
+      image:jgo.background_image,
+      genres:jgo.genres.map((gen)=>gen.name).filter(p=>p!=null).join(','),
+      id:jgo.id,
+  })
+  apiJuego=apiUrl.data.next
+});
+
+let dbGames = await Videogame.findAll({ include: [Genre] })
+let jsonGames = dbGames.map((J) => J.toJSON())
+jsonGames.forEach(C => {
+C.genres = C.genres.map((genre) => genre.name).filter(p => p != null).join(', ')
+});
+
+  resultados=resultados.concat(jsonGames)
+  return resultados[0]
+}
+
+
+
+
 
 //const getDbgames= async()=>{
 //    return await Videogame.findAll({
@@ -72,13 +101,57 @@ function getDbgames(){
   }))
 })}
 
-
-
-
-
 router.get('/',async(req,res)=>{
+  const {name}=req.query;
+  let juegostotales= await getApigames()
+  if(!name){res.status(200).json(juegostotales)}else
+  {
+  let gamesAPI = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}&page_size=100`) 
+  var gamesAPIFull = gamesAPI.data.results.map((juegos) => {
+    var game = {
+      id: juegos.id,
+      name: juegos.name,
+      rating: juegos.rating,
+      image: juegos.background_image,
+      genres: juegos.genres && juegos.genres.map((p) => p.name).filter(p => p != null).join(', '),
+    };
+    return game;
+  })
+ 
+  
+ let juegostotales= await getDbgames();
+  let npjuego=juegostotales.filter(el=>el.name.toLowerCase().includes(name.toLocaleLowerCase()))
+// var prueba=njuego.length?njuego:"el juego no esta EN LA BASE DE DATOS "
+  let njuego=npjuego.map((J)=>J.toJSON())
+  njuego.forEach(C=>{
+     C.genres=C.genres.map((genre)=>genre.name).filter(p=>p !=null).join(',')
+  })
+
+var demo={
+id:"nofound",
+name:`El nombre ${name} no esta en uso`,
+genres:"Crea tu videojuego"
+}
+
+
+
+total=gamesAPIFull.concat(njuego)
+if(total.length===0)total.push(demo) 
+
+ //prueba=total.length?total:notFound
+console.log(total)
+res.json(total)
+
+
+}
+}
+)
+
+
+
+router.get('/uno/',async(req,res)=>{
     const {name}=req.query;
-    let juegostotales= await getApigames()
+    let juegostotales= await getApigames2()
     if(!name){res.status(200).json(juegostotales)}else
     {
     let gamesAPI = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}&page_size=100`) 

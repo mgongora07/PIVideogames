@@ -26,7 +26,6 @@ export default function Home(){
 
 
 
-
    // const maximo=Math.ceil(allvideogames.length/7)
     
     const paginado=(pageNumber)=>{
@@ -59,6 +58,9 @@ dispatch(filterVideogamesByGenre(e.target.value))
 function handleFilterCreated(e){
     dispatch(filterCreated(e.target.value))
 }
+
+
+
 
 function handleSort(e){
     e.preventDefault();
@@ -138,6 +140,9 @@ return(
     <option value="api">Existente</option>
 </select>
 </div>
+
+
+
 
 
 {/*<Paginacion 

@@ -14,7 +14,7 @@ export default function Detail(props){
     
      //const dispatch= useDispatch();   
      const dispatch=useDispatch()
-     const genres=useSelector((state)=> state.genres)
+    // const genres=useSelector((state)=> state.genres)
      
      const[botonActivo,setBotonActivo]=useState(false)
  
@@ -51,19 +51,19 @@ export default function Detail(props){
  }
  
  
- function handleSelect(e){
-     setInput({
-         ...input,
-         genre:[...input.genre,e.target.value]
-     })
- }
+ //function handleSelect(e){
+   //  setInput({
+     //    ...input,
+       //  genre:[...input.genre,e.target.value]
+   //  })
+ //}
  
- function handleDelete(el){
-     setInput({
-         ...input,
-         genre:input.genre.filter(gen=>gen!==el)
-     })
- }
+ //function handleDelete(el){
+//     setInput({
+ //        ...input,
+//         genre:input.genre.filter(gen=>gen!==el)
+//     })
+//  }
  
  
  

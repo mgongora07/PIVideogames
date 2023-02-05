@@ -58,6 +58,9 @@ function rootReducer(state=initialState,action){
                 videogames:statusFilter
            }
 
+         
+
+
            case 'POST_VIDEOGAME':
             return{
                 ...state,
@@ -83,6 +86,11 @@ function rootReducer(state=initialState,action){
                     ...state,
                     videogames:action.payload==='All'?state.allVideogames:creadosFilter
                 }
+
+
+
+
+
 
             case 'FILTER_NAME':
                 let sortedArr=action.payload==='asc'?
