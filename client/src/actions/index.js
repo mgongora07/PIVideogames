@@ -16,7 +16,7 @@ export function getVideogames(){
 export function getNameVideogames(name){
   return async function(dispatch){
 try{
-    var json=await axios.get(`http://localhost:3001/videogames/?name=${name}`);
+    var json=await axios.get(`/videogames/?name=${name}`);
     return dispatch({
       type:'GET_BY_NAME',
       payload:json.data
@@ -30,7 +30,7 @@ try{
 
 export function getGenres(){
   return async function(dispatch){
-    var info= await axios.get(`http://localhost:3001/genres`);
+    var info= await axios.get(`/genres`);
     return dispatch({
       type:'GET_GENRE',
       payload:info.data
@@ -40,7 +40,7 @@ export function getGenres(){
 
 export function postVideogame(payload){
   return async function(dispatch){
-    var response= await axios.post('http://localhost:3001/videogame',payload)
+    var response= await axios.post('/videogame',payload)
     return response;
   }
 }
@@ -49,7 +49,7 @@ export function postVideogame(payload){
 //modificado
 export function deleteVideogame(id){
   return async function(dispatch){
-    var response= await axios.delete(`http://localhost:3001/videogames/${id}`)
+    var response= await axios.delete(`/videogames/${id}`)
     return response;
   }
 }
@@ -57,7 +57,7 @@ export function deleteVideogame(id){
 //modificado
 export function modificarVideojuego(payload){
 return async function(dispatch){
-  var response= await axios.put(`http://localhost:3001/videogames/`,payload)
+  var response= await axios.put(`/videogames/`,payload)
   return response;
 }
 }

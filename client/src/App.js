@@ -8,7 +8,8 @@ import MyList from './components/My List/MyList';
 import MisVideojuegos from './components/MisVideojuegos/MisVideojuegos';
 import ModificarVideogame from './components/ModificarVideojuego/ModifcarVideogame';
 import './App.css';
-
+import axios from 'axios';
+axios.defaults.baseURL='http://localhost:3001/';
 
 function App() {
   return (
