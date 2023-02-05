@@ -9,7 +9,8 @@ import MisVideojuegos from './components/MisVideojuegos/MisVideojuegos';
 import ModificarVideogame from './components/ModificarVideojuego/ModifcarVideogame';
 import './App.css';
 import axios from 'axios';
-axios.defaults.baseURL='http://localhost:3001/';
+//axios.defaults.baseURL='http://localhost:3001/';
+axios.defaults.baseURL='https://pivideogames-production.up.railway.app/'
 
 function App() {
   return (
